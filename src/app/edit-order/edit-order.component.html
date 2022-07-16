@@ -1,0 +1,15 @@
+<div class="row" style="padding: 2%;">
+    <div class="col-md-6">Order Number</div>
+    <div class="col-md-6"><input type="text" [(ngModel)]="orderDetails.orderNumber"></div>
+    <div class="col-md-6">Due Date</div>
+    <div class="col-md-6"><input type="date" [(ngModel)]="orderDetails.dueDate" value="orderDetails.dueDate"></div>
+    <div class="col-md-6">Customer Name</div>
+    <div class="col-md-6"><input type="text" [(ngModel)]="orderDetails.customerName"></div>
+    <div class="col-md-6">Customer Address</div>
+    <div class="col-md-6"><input type="text" [(ngModel)]="orderDetails.customerAddress"></div>
+    <div class="col-md-6">Customer Phone</div>
+    <div class="col-md-6"><input type="number" [(ngModel)]="orderDetails.customerPhone"></div>
+    <div class="col-md-6">Order Total</div>
+    <div class="col-md-6"><input type="number" [(ngModel)]="orderDetails.orderTotal"></div>
+    <div class="col-md-12"><button (click)="save();activeModal.close('Ok')">SAVE</button></div>
+</div>

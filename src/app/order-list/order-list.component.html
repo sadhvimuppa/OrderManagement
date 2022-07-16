@@ -1,0 +1,41 @@
+<div class="list-card">
+    <button class="newButton" (click)="create()">New Order</button>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Order Number</th>
+      <th scope="col">Order Due Date</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Customer Address</th>
+      <th scope="col">Customer Phone</th>
+      <th scope="col">Order Total</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders; index as i">
+      <td>{{ order.orderNumber }}</td>
+      <td>{{ order.dueDate | date }}</td>
+      <td>{{ order.customerName }}</td>
+      <td>{{ order.customerAddress }}</td>
+      <td>{{ order.customerPhone }}</td>
+      <td>{{ order.orderTotal }}</td>
+      <td style="cursor:pointer;text-decoration: underline;" (click)="edit(order)">Edit</td>
+      <td style="cursor:pointer;text-decoration: underline;" (click)="delete(content,order,i)">Delete</td>
+    </tr>
+    </tbody>
+  </table>
+  <ng-template #content let-modal>
+    <div class="modal-body">
+      <p><strong>Are you sure you want to delete Order?</strong></p>
+      <p>All information associated to this order will be permanently deleted.
+      <span class="text-danger">This operation can not be undone.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button"  (click)="modal.dismiss('cancel')">Cancel</button>
+      <button type="button" (click)="modal.close('Ok')">Ok</button>
+    </div>
+  </ng-template>
+</div>
